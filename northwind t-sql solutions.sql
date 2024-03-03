@@ -1,16 +1,18 @@
 
---1
+--1 1. Create a report that shows the CategoryName and Description from the categories table sorted by CategoryName.
 select categoryname,description
 from categories 
 order by Categoryname
 
 
---2
+--2 Create a report that shows the ContactName, CompanyName, ContactTitle and Phone number from the customers table sorted by Phone.
 select contactname, companyname, contacttitle,phone
 from customers
 order by phone
+  
 
 --3 select * from employees
+--Create a report that shows the capitalized FirstName and capitalized LastName renamed as FirstName and Lastnamerespectively and HireDate from the employees table sorted from the newest to the oldest employee.
 select upper(firstname) as FirstName, upper(lastname) from employees
 
 select concat(upper(left(firstname,1)) , upper(lastname) as LastName, hiredate
@@ -20,43 +22,65 @@ order by hiredate desc
 select concat(upper(firstname,1)),
 lower(right(firstname,length(firstname)-1)))
 from employees
+  
 
 --4 exec sp_help orders
+--Create a report that shows the top 10 OrderID, OrderDate, ShippedDate, CustomerID, Freight from the orders table sortedby Freight in descending order.
+  
 select top 10 orderid, orderdate, shippeddate, customerid, freight
 from orders order by freight desc
+  
 
 --5 select top 1 * from customers
+--5. Create a report that shows all the CustomerID in lowercase letter and renamed as ID from the customers table.
+
 select lower(customerid) as ID
 from customers
 
+  
 --6 select * from suppliers
+-- Create a report that shows the CompanyName, Fax, Phone, Country, HomePage from the suppliers table sorted by the Country in descending order then by CompanyName in ascending order.
+
 select companyname, fax, phone, country, homepage
 from suppliers
 order by country desc,companyname
+  
 
+--7. Create a report that shows CompanyName, ContactName of all customers from ‘Buenos Aires' only.
 --7 select top 1 * from customers
+  
 select companyname, contactname
 from customers
 where city = 'Buenos Aires'
 
+  
+--8. Create a report showing ProductName, UnitPrice, QuantityPerUnit of products that are out of stock.
 --8 select * from products
+  
 select productname, unitprice, quantityperunit, unitsinstock
 from products
 where unitsinstock = 0
 
+--9. Create a report showing all the ContactName, Address, City of all customers not from Germany, Mexico, Spain.
 --9 select top 1 * from customers
+
 select contactname, address, city
 from customers
 where country not in ('Germany','Mexico','Spain')
 order by city
 
+
+--10. Create a report showing OrderDate, ShippedDate, CustomerID, Freight of all orders placed on 21 May 1996.
 --10 select top 1 * from orders
+
 select orderdate, shippeddate, customerid, freight
 from orders 
 where orderdate > 1996-05-21 
 order by orderdate desc
 
---11 
+  
+--11. Create a report showing FirstName, LastName, Country from the employees not from United States.
+
 select firstname, lastname, country
 from employees
 where country <> 'USA'

@@ -305,4 +305,18 @@ on p.categoryid = c.categoryid
 select * from productdetails
 
 
+--41. Drop the customer details view.
+--42. Create a report that fetch the first 5 character of categoryName from the category tables and renamed as ShortInfo
+--43. Create a copy of the shipper table as shippers_duplicate. Then insert a copy of shippers data into the new table HINT: Create
+--a Table, use the LIKE Statement and INSERT INTO statement.
+--44. Create a select statement that outputs the following from the shippers_duplicate Table:
+--45. Create a report that shows the CompanyName and ProductName from all product in the Seafood category.
+--46. Create a report that shows the CategoryID, CompanyName and ProductName from all product in the categoryID 5.
+--47. Delete the shippers_duplicate table.
+--48. Create a select statement that ouputs the following from the employees table.
+--NB: The age might differ depending on the year you are attempting this query.
+ 
+--49. Create a report that the CompanyName and total number of orders by customer renamed as number of orders since Decemeber 31, 1994. Show number of Orders greater than 10.
+--50. Create a select statement that ouputs the following from the product table
+
 
